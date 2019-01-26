@@ -4,6 +4,14 @@
 % 25 Januari 2019
 % Code ini dapat disebarluaskan untuk tujuan pendidikan
 
+%***********************************************************************************%
+% COPYRIGHT: 
+%       engcode-ID | Coding untuk engineer indonesia
+%       github  : https://github.com/engcode-ID
+%       IG      : https://www.instagram.com/engcode.id/
+%
+%***********************************************************************************%
+
 close all;
 clear all;
 clc;
