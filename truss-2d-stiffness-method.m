@@ -245,7 +245,7 @@ end
 KnownDisp = BCInput(:, 1);
 for i = 1:size(KnownDisp, 1)
     Force(KnownDisp(i, 1), 1) = Stiffness(KnownDisp(i, 1), :) * Displacement;
-end
+end;
  
 % 8) Menentukan Stress pada tiap elemen
 for i = 1:TotalElement
@@ -285,22 +285,19 @@ for el = 1:TotalElement
 end;
 
 % gambar baru
-%magni = 20;
-%nodeNew = node + magni*reshape(Displacement, 2, TotalNode)
-%disp(nodeNew)
 magnification = 20;
-newDisplacement = reshape(Displacement, 2, TotalNode)
+newDisplacement = reshape(Displacement, 2, TotalNode);
 for i = 1:TotalNode
     nodeNew(i, 1) = Node(i, 1);
     nodeNew(i, 2) = Node(i, 2) + magnification*newDisplacement(1, i);
     nodeNew(i, 3) = Node(i, 3) + magnification*newDisplacement(2, i);
 end;
 
-plot(nodeNew(:, 2), nodeNew(:, 3), 'o')
+plot(nodeNew(:, 2), nodeNew(:, 3), 'o');
 hold on;
 axis equal;
 for el = 1:TotalElement
     elnodes = Element(el, 2:3);
     nodexy = nodeNew(elnodes, :);
-    plot(nodexy(:, 2), nodexy(:, 3), 'k-')
-end
+    plot(nodexy(:, 2), nodexy(:, 3), 'k-');
+end;
