@@ -254,7 +254,7 @@ for i = 1:TotalElement
             Displacement(ElDOF(i, 4), :);
             Displacement(ElDOF(i, 1), :);
             Displacement(ElDOF(i, 2), :)];
-    varC = L(i, 1) * E(i, 1);
+    varC = L(i, 1) / E(i, 1);
     ElStress(i, 1) = varA * varB / varC;
     ElForce(i, 1)= ElStress(i, 1) * A(i, 1);
 end
